@@ -10,6 +10,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val tvStudentName = findViewById<TextView>(R.id.tvStudentName)
+        val tvStudentID = findViewById<TextView>(R.id.tvStudentID)
+        val tvClass = findViewById<TextView>(R.id.tvClass)
+        val tvMajor = findViewById<TextView>(R.id.tvMajor)
+
         val svMe = SinhVien(
             hoTen = "Võ Minh Huy",
             mssv = "2415053122117",
@@ -17,14 +22,11 @@ class MainActivity : AppCompatActivity() {
             nganh = "Công nghệ thông tin"
         )
 
-        val tvStudentName = findViewById<TextView>(R.id.tvStudentName)
-        val tvStudentID = findViewById<TextView>(R.id.tvStudentID)
-        val tvClass = findViewById<TextView>(R.id.tvClass)
-        val tvMajor = findViewById<TextView>(R.id.tvMajor)
-
-        tvStudentName.text = "Họ và tên: ${svMe.hoTen}"
-        tvStudentID.text = "MSSV: ${svMe.mssv}"
-        tvClass.text = "Lớp: ${svMe.lop}"
-        tvMajor.text = "Ngành: ${svMe.nganh}"
+        svMe.HienThi(
+            tvName = tvStudentName,
+            tvId = tvStudentID,
+            tvClass = tvClass,
+            tvMajor = tvMajor
+        )
     }
 }
